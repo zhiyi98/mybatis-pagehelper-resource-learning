@@ -132,6 +132,11 @@ public class PageAutoDialect {
     private ThreadLocal<AbstractHelperDialect> dialectThreadLocal = new ThreadLocal<AbstractHelperDialect>();
     private AutoDialect autoDialectDelegate;
 
+    /**
+     * 根据数据库配置获取数据库类型
+     * @param jdbcUrl jdbc:mysql://localhost:3306/test
+     * @return mysql
+     */
     public static String fromJdbcUrl(String jdbcUrl) {
         final String url = jdbcUrl.toLowerCase();
         for (String dialect : dialectAliasMap.keySet()) {

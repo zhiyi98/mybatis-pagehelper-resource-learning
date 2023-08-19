@@ -19,7 +19,7 @@ class UserMapperTest {
 
     @Test
     void findAll() {
-        PageHelper.startPage(1,1);
+        PageHelper.startPage(2,2);
         List<User> all = userMapper.findAll();
         PageInfo<User> users = new PageInfo<>(all);
         System.out.println("users = " + users.getList());
